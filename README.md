@@ -1,5 +1,3 @@
-# Problem_Set_1-Group_1-Dynamic_Macroeconomics
-Hồ Thành Đạt
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -9,7 +7,7 @@ def rouwenhorst(n, p, q, sigma, mu):
     """
     pi = np.array([[p, 1 - p], [1 - q, q]])
     
-    for i in range(2, n):
+for i in range(2, n):
         pi_temp = np.zeros((i + 1, i + 1))
         pi_temp[:i, :i] += p * pi
         pi_temp[:i, 1:] += (1 - p) * pi
@@ -17,7 +15,7 @@ def rouwenhorst(n, p, q, sigma, mu):
         pi_temp[1:, 1:] += q * pi
         pi = pi_temp / pi_temp.sum(axis=1, keepdims=True)
     
-    z = np.linspace(-sigma * np.sqrt(n - 1), sigma * np.sqrt(n - 1), n) + mu
+z = np.linspace(-sigma * np.sqrt(n - 1), sigma * np.sqrt(n - 1), n) + mu
     return z, pi
 
 def simulate_markov_chain(P, states, periods, seed=2025):
@@ -27,11 +25,11 @@ def simulate_markov_chain(P, states, periods, seed=2025):
     state_idx = np.random.choice(n)  # Start with a random state
     simulation = []
     
-    for _ in range(periods):
+for _ in range(periods):
         simulation.append(states[state_idx])
         state_idx = np.random.choice(n, p=P[state_idx])
     
-    return np.array(simulation)
+return np.array(simulation)
 
 # Parameters
 n_states = 7
