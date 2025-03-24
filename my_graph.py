@@ -40,15 +40,15 @@ def track_growth(par, sol, sim):
     figure(5)
     plot(expand_dims(par.kgrid,axis=1), squeeze(sol['u'][:, 0, :]))  # Revert to using plot
     xlabel('$k_{t}$')
-    ylabel('$n_{t}$')
-    title('Labor Supply Policy Function')
+    ylabel('$u_{t}$')
+    title('Utility Function')
   #  figname = os.path.join(par.figout, "npol.png")
  #   savefig(figname)
 
     figure(6)
     plot(expand_dims(par.kgrid,axis=1), squeeze(sol['v'][:, 0, :]))  # Revert to using plot
     xlabel('$k_{t}$')
-    ylabel('$n_{t}$')
+    ylabel('$v_{t}$')
     title('Value Function')
   #  figname = os.path.join(par.figout, "vfun.png")
   #  savefig(figname)
